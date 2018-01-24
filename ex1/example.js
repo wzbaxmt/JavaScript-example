@@ -37,6 +37,7 @@ alert("celsius is " + temp_celsius);
 
 function variableTest()
 {
+    age = 18;
     alert(age);
 }
 variableTest();
