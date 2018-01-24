@@ -3,18 +3,19 @@
 alert("hello");
 /* JS多行注释 */
 var mood = 'happy don\'t ask \"me';
-var age = -25.255555555555;
-var married = true;
-var she = Array(3);
-she[0] = "s";
-she[1] = "h";
-she[2] = "e";
-she[6] = "2wq";
-var year = [1,2,3,4];
+var age = 25.55555555555;
+//内建对象
+var age = Math.round(age);
+alert(age);
+var currentDate = new Date();
+var today = currentDate.getDay();
+alert("today is " + today);
+//二维数组
 var me = ["wyq", 25, true];
-var qtec = Array();
+var qtec = new Array();
 qtec["laoda"] = me;
 alert(qtec["laoda"][0]);
+//函数调用
 function showArray(tempArray)
 {
     console.log("showArray " + tempArray.length);
