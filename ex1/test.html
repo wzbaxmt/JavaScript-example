@@ -1,14 +1,39 @@
 <html>
-    <head>
-    <title>Just a test</title> 
-    <script type="text/javascript" src="example.js">
-    </script>   
-    </head>
-    <body>
-        <!- this is a comment in html 
+
+<head>
+    <style>
+        p {
+            color:yellow;
+            font-family: "arial", sans-serif;
+            font-size: 5.2em;
+        }
+        body{
+            color: white;
+            background-color: black;
+        }
+        .special{
+            color: aqua;
+            font-style: italic;
+        }
+    </style>
+
+    <title>Shopping list</title>
+    <script type="text/javascript" src="example.js"></script>
+</head>
+
+<body>
+    <!- this is a comment in html 
         net line ->
-        aaaaaaaaaaaaaaaaaaaaa;
-        bbbbbbbbbbbbbbbbbbbbb;
-        ccccccccccccccccccccc;
-    </body>
+    <h1>What to buy</h1>
+    <h2 class="special">So does this headline</h2>
+    <p>Don't forget to buy this stuff</p>
+    <p class="special">This paragraph is special</p>
+    <ul id="purchases">
+        <li>aaaaaaaaaaaaaaaaaaaaa</li>
+        <li>bbbbbbbbbbbbbbbbbbbbb</li>
+        <li>ccccccccccccccccccccc</li>
+    </ul>
+    aaaaaaaaaaaaaaaaaaaaa; bbbbbbbbbbbbbbbbbbbbb; ccccccccccccccccccccc;
+</body>
+
 </html>
