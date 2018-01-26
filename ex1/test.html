@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -15,10 +16,27 @@
             color: aqua;
             font-style: italic;
         }
+        h2.special{
+            text-transform: uppercase;
+            color: blue;
+        }
+        #purchases{
+            background-color: black;
+            color: aqua;
+            padding: 1em;
+            border: 10px solid white;
+        }
     </style>
 
     <title>Shopping list</title>
     <script type="text/javascript" src="example.js"></script>
+    <script type="text/javascript">
+        function getElements()
+        {
+            var x=document.getElementsByTagName("li");
+            alert(x.length);
+        }
+    </script>
 </head>
 
 <body>
@@ -26,14 +44,32 @@
         net line ->
     <h1>What to buy</h1>
     <h2 class="special">So does this headline</h2>
-    <p>Don't forget to buy this stuff</p>
+    <p title="test">Don't forget to buy this stuff</p>
     <p class="special">This paragraph is special</p>
     <ul id="purchases">
-        <li>aaaaaaaaaaaaaaaaaaaaa</li>
-        <li>bbbbbbbbbbbbbbbbbbbbb</li>
-        <li>ccccccccccccccccccccc</li>
+        <li name = "aa">aaaaaaaaaaaaaaaaaaaaa</li>
+        <li name = "aa">bbbbbbbbbbbbbbbbbbbbb</li>
+        <li name = "aa">ccccccccccccccccccccc</li>
     </ul>
     aaaaaaaaaaaaaaaaaaaaa; bbbbbbbbbbbbbbbbbbbbb; ccccccccccccccccccccc;
+    <input type="button" onclick="getElements()" value="How many input elements?" />
+    <script>
+            //根据标签获取属性
+            var x = document.getElementsByTagName("li");
+            alert(x.length);
+            //获取属性的值
+            //alert(x[1].getAttribute("name"));
+            var shopping = document.getElementById("purchases");
+            //alert(shopping.getAttribute("title"));
+            shopping.setAttribute("title","a list of goods");
+            //alert(shopping.getAttribute("title"));
+            var pname = document.getElementsByTagName("p");
+            alert(pname.length);
+            alert(pname[0].getAttribute("title"));
+            pname[0].setAttribute("title","texttxet");
+            alert(pname[0].getAttribute("title"));
+
+    </script>
 </body>
 
 </html>

@@ -42,3 +42,6 @@ function variableTest()
     alert(age);
 }
 //variableTest();
+//alert(typeof document.getElementById("purchases"));
+//注意getElementsByTagName需在查找的元素后面
+//alert(document.getElementsByTagName("li").length);
