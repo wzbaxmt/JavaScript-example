@@ -9,17 +9,17 @@
     <h1>Snapshots</h1>
     <ul>
         <li>
-            <a href="image/fireworks.jpg" title="fireworks">Fireworks</a>
+            <a href="image/fireworks.jpg" onclick="showPic(this);return false;" title="fireworks">Fireworks</a>
         </li>
         <li>
-            <a href="image/coffee.jpg" title="coffee">coffee</a>
+            <a href="image/coffee.jpg" onclick="showPic(this);return false;" title="coffee">coffee</a>
         </li>
         <li>
-            <a href="image/rose.jpg" title="rose">rose</a>
+            <a href="image/rose.jpg" onclick="showPic(this);return false;" title="rose">rose</a>
         </li>
+        <img id="placeholder" src="image/shark.jpg" alt="my image gallery" />
     </ul>
 
 </body>
-
-
+<script type="text/javascript" src="scripts/showPic.js"></script>
 </html>
