@@ -3,6 +3,8 @@
 <head>
     <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
     <title>Image Gallery</title>
+    <script type="text/javascript" src="scripts/showPic.js"></script>
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -17,9 +19,29 @@
         <li>
             <a href="image/rose.jpg" onclick="showPic(this);return false;" title="rose">rose</a>
         </li>
-        <img id="placeholder" src="image/shark.jpg" alt="my image gallery" />
+        <li>
+            <a href="javascript:popUp('http://www.baidu.com/');" title="baidu">baidu</a>
+        </li>
+        <li>
+            <a href="http://www.baidu.com/" onclick="popUp(this);return false;" title="baidu2">baidu2</a>
+        </li>
+        <li>
+            <a href="http://www.baidu.com/" onclick="popUp(this.href);return false;" title="baidu2">baidu22</a>
+        </li>
+        <li>
+            <a href="#" onclick="popUp('http://www.baidu.com');return false;" title="baidu2">baidu3</a>
+        </li>
+        <li>
+            <a href="http://www.baidu.com" class="popup">Example</a>
+        </li>
+        <li>
+            <a href="http://www.baidu.com">Baidu</a>
+        </li>
     </ul>
-
+    <img id="placeholder" src="image/shark.jpg" alt="my image gallery" />
+    <p id="description">Choose an image</p>
 </body>
-<script type="text/javascript" src="scripts/showPic.js"></script>
+<script type="text/javascript" >
+     //window.onload = countBodyChildren;
+</script>
 </html>
