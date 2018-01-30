@@ -3,13 +3,18 @@ function showPic(whichpic)
     //alert("showPic");
     var source = whichpic.getAttribute("href");
     console.log("href is " + source);
+    if(!document.getElementById("placeholder")) return true;
     var placeholder = document.getElementById("placeholder");
+    if(placeholder.nodeName != "IMG") return true;
     console.log("placeholder is " + placeholder);
     placeholder.setAttribute("src",source);
-    var text = whichpic.getAttribute("title");
+    var text = whichpic.getAttribute("title") ? whichpic.getAttribute("title"):"";
     //alert(text);
+    if(!document.getElementById("description")) return false;
     var description = document.getElementById("description");
-    description.firstChild.nodeValue = text;
+    description.firstChild.nodeValue = text; 
+    //alert(text);
+    return false;
     //alert(description.nodeValue);
     //alert(description.childNodes[0].nodeValue);
     //alert(description.firstChild.nodeValue);
@@ -24,7 +29,7 @@ function popUp(winURL)
 {
     window.open(winURL,"popup","width=320,height=480");
 }
-window.onload = prepareLinks;
+
 function prepareLinks()
 {
     var links = document.getElementsByTagName("a");
@@ -40,4 +45,43 @@ function prepareLinks()
             }
         }
     }
+}
+
+function prepareGallery()
+{
+    var gallery = document.getElementById("imagegallery");
+    var links = gallery.getElementsByTagName("a");
+    for(var i=0; i<links.length; i++)
+    {
+        links[i].onclick = function()
+        {
+            return showPic(this);
+            //return false;
+        }
+        //links[i].onkeypress = links[i].onclick;
+    }
+}
+
+function addLoadEvent(func)
+{
+    var oldonload = window.onload;
+    if(typeof window.onload != 'function')
+    {
+        window.onload = func;
+    }
+    else
+    {
+        window.onload = function()
+        {
+            oldonload();
+            func();
+        }
+    }
+}
+//window.onload = prepareLinks;
+//window.onload = prepareGallery;
+window.onload = function()
+{
+    prepareLinks();
+    prepareGallery();
 }
